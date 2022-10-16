@@ -1,0 +1,266 @@
+{
+	"main_folder": "fonts",
+	"css_file": "style.css",
+	"preload_file": "preload.html",
+	"fonts": [
+		{
+			"name": "Lato",
+			"folder": "lato",
+			"file_trunc": "lato-v23-latin-",
+			"file_types": [ "woff2", "woff" ],
+			"variants": [
+				{
+					"name": "100",
+					"file_slug": "100"
+				},
+				{
+					"name": "300",
+					"file_slug": "300"
+				},
+				{
+					"name": "Regular",
+					"file_slug": "regular"
+				},
+				{
+					"name": "700",
+					"file_slug": "700"
+				},
+				{
+					"name": "900",
+					"file_slug": "900"
+				},
+				{
+					"name": "100 Italic",
+					"file_slug": "100italic"
+				},
+				{
+					"name": "300 Italic",
+					"file_slug": "300italic"
+				},
+				{
+					"name": "Italic",
+					"file_slug": "italic"
+				},
+				{
+					"name": "700 Italic",
+					"file_slug": "700italic"
+				},
+				{
+					"name": "900 Italic",
+					"file_slug": "900italic"
+				}
+			]
+		},
+		{
+			"name": "Montserrat",
+			"folder": "montserrat",
+			"file_trunc": "montserrat-v25-latin-",
+			"file_types": [ "woff2", "woff" ],
+			"variants": [
+				{
+					"name": "100",
+					"file_slug": "100"
+				},
+				{
+					"name": "200",
+					"file_slug": "200"
+				},
+				{
+					"name": "300",
+					"file_slug": "300"
+				},
+				{
+					"name": "Regular",
+					"file_slug": "regular"
+				},
+				{
+					"name": "500",
+					"file_slug": "500"
+				},
+				{
+					"name": "600",
+					"file_slug": "600"
+				},
+				{
+					"name": "700",
+					"file_slug": "700"
+				},
+				{
+					"name": "800",
+					"file_slug": "800"
+				},
+				{
+					"name": "900",
+					"file_slug": "900"
+				},
+				{
+					"name": "100 Italic",
+					"file_slug": "100italic"
+				},
+				{
+					"name": "200 Italic",
+					"file_slug": "200italic"
+				},
+				{
+					"name": "300 Italic",
+					"file_slug": "300italic"
+				},
+				{
+					"name": "Italic",
+					"file_slug": "italic"
+				},
+				{
+					"name": "500 Italic",
+					"file_slug": "500italic"
+				},
+				{
+					"name": "600 Italic",
+					"file_slug": "600italic"
+				},
+				{
+					"name": "700 Italic",
+					"file_slug": "700italic"
+				},
+				{
+					"name": "800 Italic",
+					"file_slug": "800italic"
+				},
+				{
+					"name": "900 Italic",
+					"file_slug": "900italic"
+				}
+			]
+		},
+		{
+			"name": "Open Sans",
+			"folder": "open-sans",
+			"file_trunc": "open-sans-v34-latin-ext_latin-",
+			"file_types": [ "woff2", "woff" ],
+			"variants": [
+				{
+					"name": "300",
+					"file_slug": "300"
+				},
+				{
+					"name": "Regular",
+					"file_slug": "regular"
+				},
+				{
+					"name": "500",
+					"file_slug": "500"
+				},
+				{
+					"name": "700",
+					"file_slug": "700"
+				},
+				{
+					"name": "600",
+					"file_slug": "600"
+				},
+				{
+					"name": "800",
+					"file_slug": "800"
+				},
+				{
+					"name": "300 Italic",
+					"file_slug": "300italic"
+				},
+				{
+					"name": "300 Italic",
+					"file_slug": "300italic"
+				},
+				{
+					"name": "Italic",
+					"file_slug": "italic"
+				},
+				{
+					"name": "500 Italic",
+					"file_slug": "500italic"
+				},
+				{
+					"name": "600 Italic",
+					"file_slug": "600italic"
+				},
+				{
+					"name": "700 Italic",
+					"file_slug": "700italic"
+				},
+				{
+					"name": "800 Italic",
+					"file_slug": "800italic"
+				}
+			]
+		},
+		{
+			"name": "Source Sans Pro",
+			"folder": "source-sans-pro",
+			"file_trunc": "source-sans-pro-v21-latin-ext_latin-",
+			"file_types": [ "woff2", "woff" ],
+			"variants": [
+				{
+					"name": "200",
+					"file_slug": "200"
+				},
+				{
+					"name": "300",
+					"file_slug": "300"
+				},
+				{
+					"name": "Regular",
+					"file_slug": "regular"
+				},
+				{
+					"name": "600",
+					"file_slug": "600"
+				},
+				{
+					"name": "700",
+					"file_slug": "700"
+				},
+				{
+					"name": "900",
+					"file_slug": "900"
+				},
+				{
+					"name": "200 Italic",
+					"file_slug": "200italic"
+				},
+				{
+					"name": "300 Italic",
+					"file_slug": "300italic"
+				},
+				{
+					"name": "Italic",
+					"file_slug": "italic"
+				},
+				{
+					"name": "600 Italic",
+					"file_slug": "600italic"
+				},
+				{
+					"name": "700 Italic",
+					"file_slug": "700italic"
+				},
+				{
+					"name": "900 Italic",
+					"file_slug": "900italic"
+				}
+			]
+		}
+	],
+	"template": {
+		"replace_patterns": {
+			"comment": "___COMMENT___",
+			"name": "___NAME___",
+			"font_style": "___FONT_STYLE___",
+			"font_weight": "___FONT_WEIGHT___",
+			"url_list": "___URL_LIST___",
+			"url": "___URL___",
+			"format": "___FORMAT___"
+		},
+		"font_face": "/* ___COMMENT___ */\n@font-face {\n  font-family: '___NAME___';\n  font-style: ___FONT_STYLE___;\n  font-weight: ___FONT_WEIGHT___;\n  src: local(''),\n___URL_LIST___;\n}",
+		"url_list_item": "       url('___URL___') format('___FORMAT___')",
+		"style_preload": "<link rel=\"preload\" href=\"___URL___\" as=\"style\">",
+		"font_preload": "<link rel=\"preload\" href=\"___URL___\" as=\"font\" type=\"font/___FORMAT___\" crossorigin>"
+	} 
+}
