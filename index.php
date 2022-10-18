@@ -23,9 +23,12 @@ if ( ! defined( 'OHF_BASENAME' ) ) {
     define( 'OHF_BASENAME', plugin_basename( OHF_FILE ) );
 }
 // get plugin url
-$homeUrl = get_bloginfo( 'url' ) . '/';
+$home_url = get_bloginfo( 'url' ) . '/';
+if ( ! defined( 'OHF_HOME_URL' ) ) {
+    define( 'OHF_HOME_URL', $home_url );
+}
 $plugin_url = plugin_dir_url( __FILE__ ); // do NOT use `plugin_dir_path( __FILE__ )` here!
-$root_related_plugin_url = explode( str_replace( 'https://', 'http://', $homeUrl ), str_replace( 'https://', 'http://', $plugin_url ) )[ 1 ];
+$root_related_plugin_url = explode( str_replace( 'https://', 'http://', $home_url ), str_replace( 'https://', 'http://', $plugin_url ) )[ 1 ];
 if ( ! defined( 'OHF_PLUGIN_URL' ) ) {
     define( 'OHF_PLUGIN_URL', $plugin_url );
 }

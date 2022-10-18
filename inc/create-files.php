@@ -92,7 +92,7 @@ function ohf_update_files_after_options_save( $old_value, $new_value, $args ) {
                     // use 1st item, make style preload text
                     if ( $index == 0 && isset( $templ->font_preload ) ) {
                         $font_preload_item = $templ->font_preload;
-                        $font_preload_item = str_replace( $repl_patt->url, OHF_PLUGIN_URL . $url, $font_preload_item );
+                        $font_preload_item = str_replace( $repl_patt->url, OHF_HOME_URL . $url, $font_preload_item );
                         $font_preload_item = str_replace( $repl_patt->format, $file_type, $font_preload_item );
                         $fonts_preload_text .= $font_preload_item . "\n";
                     }
