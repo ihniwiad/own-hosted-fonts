@@ -16,7 +16,8 @@ const paths = {
             'inc/**/*.php', 
             'data.json', 
             'fonts/**/*', 
-            'languages/*.mo'
+            'languages/*.mo',
+            '*.png', 
         ],
     },
 };
