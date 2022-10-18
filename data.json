@@ -258,7 +258,7 @@
 			"url": "___URL___",
 			"format": "___FORMAT___"
 		},
-		"font_face": "/* ___COMMENT___ */\n@font-face {\n  font-family: '___NAME___';\n  font-style: ___FONT_STYLE___;\n  font-weight: ___FONT_WEIGHT___;\n  src: local(''),\n___URL_LIST___;\n}",
+		"font_face": "/* ___COMMENT___ */\n@font-face {\n  font-family: '___NAME___';\n  font-style: ___FONT_STYLE___;\n  font-weight: ___FONT_WEIGHT___;\n  src: local(''),\n___URL_LIST___;\n  font-display: fallback;\n}",
 		"url_list_item": "       url('___URL___') format('___FORMAT___')",
 		"style_preload": "<link rel=\"preload\" href=\"___URL___\" as=\"style\">",
 		"font_preload": "<link rel=\"preload\" href=\"___URL___\" as=\"font\" type=\"font/___FORMAT___\" crossorigin>"

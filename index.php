@@ -4,7 +4,7 @@
  * Plugin Name: Own Hosted Fonts (remove Google Fonts)
  * Plugin URI: https://github.com/ihniwiad/own-hosted-fonts
  * Description: Includes selectable fonts to WordPress Theme, can remove all Google Fonts (and Google APIs) code from Theme.
- * Version: 1.0.3
+ * Version: 1.0
  * Author: ihniwiad
  * Text Domain: own-hosted-fonts
  * Domain Path: /languages
@@ -23,15 +23,30 @@ if ( ! defined( 'OHF_BASENAME' ) ) {
     define( 'OHF_BASENAME', plugin_basename( OHF_FILE ) );
 }
 // get plugin url
-$homeUrl = get_bloginfo( 'url' ) . '/';
+$home_url = get_bloginfo( 'url' ) . '/';
+if ( ! defined( 'OHF_HOME_URL' ) ) {
+    define( 'OHF_HOME_URL', $home_url );
+}
 $plugin_url = plugin_dir_url( __FILE__ ); // do NOT use `plugin_dir_path( __FILE__ )` here!
-$root_related_plugin_url = explode( str_replace( 'https://', 'http://', $homeUrl ), str_replace( 'https://', 'http://', $plugin_url ) )[ 1 ];
+$root_related_plugin_url = explode( str_replace( 'https://', 'http://', $home_url ), str_replace( 'https://', 'http://', $plugin_url ) )[ 1 ];
 if ( ! defined( 'OHF_PLUGIN_URL' ) ) {
     define( 'OHF_PLUGIN_URL', $plugin_url );
 }
 if ( ! defined( 'ROOT_RELATED_PLUGIN_URL' ) ) {
     define( 'ROOT_RELATED_PLUGIN_URL', $root_related_plugin_url );
 }
+
+
+
+/**
+ * Load plugin textdomain.
+ */
+
+function ohf_load_textdomain() {
+	load_plugin_textdomain( 'own-hosted-fonts', false, dirname( plugin_basename( OHF_FILE ) ) . '/languages' );
+}
+add_action( 'init', 'ohf_load_textdomain' );
+
 
 
 /**

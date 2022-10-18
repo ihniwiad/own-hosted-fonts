@@ -51,7 +51,6 @@ function ohf_settings_page() {
 if ( window.jQuery ) {  
     ( function( $ ) {
         $( document.currentScript ).parent().find( '[data-ohf-ui="input-wrapper"]' ).each( function() {
-            // var $input = $( this ).find( '[data-ohf-ui="input"]' );
             var $checkboxes = $( this ).find( '[data-ohf-ui="checkbox"]' );
             $.fn.updateValue = function() {
                 var $input = $( this );
@@ -66,6 +65,7 @@ if ( window.jQuery ) {
                 $input.val( newValueArray.join( '|' ) );
             }
             // initial update (done by PHP)
+            // var $input = $( this ).find( '[data-ohf-ui="input"]' );
             // $input.updateValue();
             $checkboxes.on( 'change', function() {
                 var $input = $( this ).closest( '[data-ohf-ui="input-wrapper"]' ).find( '[data-ohf-ui="input"]' );
@@ -101,7 +101,7 @@ function ohf_settings_page_setup() {
     // fields for section
     add_settings_field(
         $ohf_setting_prefix . 'remove_google_fonts', // id
-        esc_html__( 'Remove Google Fonts &amp; Google Apis (recommended)', 'own-hosted-fonts' ), // title
+        esc_html__( 'Remove Google Fonts &amp; Google APIs (recommended)', 'own-hosted-fonts' ), // title
         'ohf_render_custom_checkbox', // callback, use unique function name
         'ohf_settings', // page
         'ohf_settings_options_section', // section = 'default'

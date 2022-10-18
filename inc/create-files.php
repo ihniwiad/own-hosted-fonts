@@ -92,7 +92,7 @@ function ohf_update_files_after_options_save( $old_value, $new_value, $args ) {
                     // use 1st item, make style preload text
                     if ( $index == 0 && isset( $templ->font_preload ) ) {
                         $font_preload_item = $templ->font_preload;
-                        $font_preload_item = str_replace( $repl_patt->url, OHF_PLUGIN_URL . $url, $font_preload_item );
+                        $font_preload_item = str_replace( $repl_patt->url, OHF_HOME_URL . $url, $font_preload_item );
                         $font_preload_item = str_replace( $repl_patt->format, $file_type, $font_preload_item );
                         $fonts_preload_text .= $font_preload_item . "\n";
                     }
@@ -141,29 +141,15 @@ function ohf_update_files_after_options_save( $old_value, $new_value, $args ) {
             $style_preload_text = str_replace( $repl_patt->url, $css_file_url, $style_preload_text );
         }
 
-
-
-    // open & write file
-    
-    // $file_path = OHF_FILE_PATH . $data_json->main_folder . '/' . 'debug.txt';
-    // $file = fopen( $file_path, "w" ) or die( "Unable to open file!" );
-    // fwrite( $file, $style_preload_text . "\n" . $fonts_preload_text );
-    // fclose( $file );
-
-
-
-
-
-
         // open & write style file
         $file_path = $font_folder_path . '/' . $data_json->css_file;
-        $file = fopen( $file_path, "w" ) or die( "Unable to open file!" );
+        $file = fopen( $file_path, "w" ) or die( "Unable to create file!" );
         fwrite( $file, $font_face_text );
         fclose( $file );
 
         // open & write preload file
         $file_path = $font_folder_path . '/' . $data_json->preload_file;
-        $file = fopen( $file_path, "w" ) or die( "Unable to open file!" );
+        $file = fopen( $file_path, "w" ) or die( "Unable to create file!" );
         fwrite( $file, $style_preload_text . "\n" . $fonts_preload_text );
         fclose( $file );
     }
