@@ -62,8 +62,6 @@ function ohf_update_files_after_options_save( $old_value, $new_value, $args ) {
     // /TEST
 
 
-
-
     if ( $old_value != $new_value ) {
         // font config has changed, rebuild CSS file
 
@@ -133,19 +131,24 @@ function ohf_update_files_after_options_save( $old_value, $new_value, $args ) {
         // prepare paths
         $font_folder_path = OHF_FILE_PATH . $data_json->main_folder . '/' . $font->folder;
         $font_folder_url = OHF_PLUGIN_URL . $data_json->main_folder . '/' . $font->folder;
-        $css_file_url = $font_folder_url . '/' . $data_json->css_file;
+        $css_path = $data_json->main_folder . '/' . $font->folder . '/' . $data_json->css_file;
+
+        // write css file befor trying to get file time version param
+        // open & write style file
+        $file_path = $font_folder_path . '/' . $data_json->css_file;
+        $file = fopen( $file_path, "w" ) or die( "Unable to create file!" );
+        fwrite( $file, $font_face_text );
+        fclose( $file );
+
+        // get file time version param (after file is written)
+        $css_version = file_exists( $file_path ) ? filemtime( $file_path ) : 'null';
+        $css_file_url = $font_folder_url . '/' . $data_json->css_file . '?v=' . $css_version; 
 
         // make style preload text
         if ( isset( $templ->style_preload ) ) {
             $style_preload_text = $templ->style_preload;
             $style_preload_text = str_replace( $repl_patt->url, $css_file_url, $style_preload_text );
         }
-
-        // open & write style file
-        $file_path = $font_folder_path . '/' . $data_json->css_file;
-        $file = fopen( $file_path, "w" ) or die( "Unable to create file!" );
-        fwrite( $file, $font_face_text );
-        fclose( $file );
 
         // open & write preload file
         $file_path = $font_folder_path . '/' . $data_json->preload_file;

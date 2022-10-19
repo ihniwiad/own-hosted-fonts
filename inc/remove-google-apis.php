@@ -6,15 +6,15 @@
 
 if ( get_option( $ohf_setting_prefix . 'remove_google_fonts' ) ) {
 
-    add_action( 'get_header', 'ad_ob_start' );
-    add_action( 'wp_head', 'ad_ob_end_flush', 100 );
-    function ad_ob_start() {
-        ob_start( 'ad_filter_wp_head_output' );
+    add_action( 'get_header', 'ohf_ad_ob_start' );
+    add_action( 'wp_head', 'ohf_ad_ob_end_flush', 100 );
+    function ohf_ad_ob_start() {
+        ob_start( 'ohf_ad_filter_wp_head_output' );
     }
-    function ad_ob_end_flush() {
+    function ohf_ad_ob_end_flush() {
         ob_end_flush();
     }
-    function ad_filter_wp_head_output( $output ) {
+    function ohf_ad_filter_wp_head_output( $output ) {
         $needle_pattern = '.googleapis.';
         $any_char_in_html_tag = "[a-zA-Z0-9-_ =\"':.;%\+#&?\/]"; // [a-zA-Z0-9-_ =\"':.;%\+#&?\/]
         $pattern = sprintf( 
