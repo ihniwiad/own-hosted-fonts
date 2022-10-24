@@ -6,7 +6,7 @@
 		{
 			"name": "Lato",
 			"folder": "lato",
-			"file_trunc": "lato-v23-latin-",
+			"file_trunc": "lato-v23-latin-ext_latin-",
 			"file_types": [ "woff2", "woff" ],
 			"variants": [
 				{
@@ -54,7 +54,7 @@
 		{
 			"name": "Montserrat",
 			"folder": "montserrat",
-			"file_trunc": "montserrat-v25-latin-",
+			"file_trunc": "montserrat-v25-latin-ext_latin-",
 			"file_types": [ "woff2", "woff" ],
 			"variants": [
 				{

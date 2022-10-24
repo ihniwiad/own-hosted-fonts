@@ -1,6 +1,6 @@
 {
   "name": "own-hosted-fonts",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Includes selectable fonts to WordPress Theme, can remove all Google Fonts (and Google APIs) code from Theme.",
   "author": "ihniwiad",
   "license": "GPL-2.0-or-later",

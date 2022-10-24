@@ -4,7 +4,7 @@
  * Plugin Name: Own Hosted Fonts (remove Google Fonts)
  * Plugin URI: https://github.com/ihniwiad/own-hosted-fonts
  * Description: Includes selectable fonts to WordPress Theme, can remove all Google Fonts (and Google APIs) code from Theme.
- * Version: 1.0
+ * Version: 1.0.5
  * Author: ihniwiad
  * Text Domain: own-hosted-fonts
  * Domain Path: /languages

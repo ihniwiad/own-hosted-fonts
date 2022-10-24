@@ -112,6 +112,7 @@ function ohf_update_files_after_options_save( $old_value, $new_value, $args ) {
                 $text = str_replace( $repl_patt->font_style, $font_style, $text );
 
                 // get fon weight
+                // TODO: what about “Thin”, “Light”, “Medium”, “Bold”, “Black”, etc?
                 if ( strtolower( $file_slug ) == 'regular' || strtolower( $file_slug ) == 'italic' ) {
                     $font_weight = 400;
                 }
