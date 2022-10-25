@@ -23,8 +23,8 @@ function ohf_register_fonts_style() {
 
                 if ( get_option( $setting_id ) ) {
                     $css_path = $data_json->main_folder . '/' . $font->folder . '/' . $data_json->css_file;
-                    $css_version = file_exists( ROOT_RELATED_PLUGIN_URL . $css_path ) ? filemtime( ROOT_RELATED_PLUGIN_URL . $css_path ) : 'null';
-                    wp_enqueue_style( strtolower( $font->name ) . '-font-style', plugins_url( $css_path . '?v=' . $css_version , OHF_FILE ) );
+                    $css_version = file_exists( OWHOF_ROOT_RELATED_PLUGIN_URL . $css_path ) ? filemtime( OWHOF_ROOT_RELATED_PLUGIN_URL . $css_path ) : 'null';
+                    wp_enqueue_style( strtolower( $font->name ) . '-font-style', plugins_url( $css_path . '?v=' . $css_version , OWHOF_FILE ) );
                 }
             }
         }

@@ -38,6 +38,10 @@ const publishConfig = {
         "**/*",
         "!**/node_modules",
         "!**/node_modules/**", 
+        "!gulpfile.js", 
+        "!package.json", 
+        "!package-lock.json", 
+        "!inc/test.php",
     ],
     "base": ".",
     "folderName": ( !! envConfig.FOLDER_NAME ? envConfig.FOLDER_NAME : '' )

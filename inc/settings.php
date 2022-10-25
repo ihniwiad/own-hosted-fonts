@@ -172,22 +172,22 @@ function ohf_settings_page_setup() {
 // modified from https://wordpress.stackexchange.com/questions/129180/add-multiple-custom-fields-to-the-general-settings-page
 function ohf_render_custom_input_field( $args ) {
     $options = get_option( $args[ 0 ] );
-    echo '<input type="text" id="'  . $args[ 0 ] . '" name="'  . $args[ 0 ] . '" value="' . htmlspecialchars( $options ) . '" />';
+    echo '<input type="text" id="'  . esc_attr( $args[ 0 ] ) . '" name="'  . esc_attr( $args[ 0 ] ) . '" value="' . esc_attr(  $options ) . '" />';
 }
 function ohf_render_custom_checkbox( $args ) {
     $options = get_option( $args[ 0 ] );
-    echo '<label><input type="checkbox" id="'  . $args[ 0 ] . '" name="' . $args[ 0 ] . '" value="1"' . ( ( $options ) ? 'checked' : '' ) . ' />' . __( 'Yes', 'own-hosted-fonts' ) . '</label>';
+    echo '<label><input type="checkbox" id="'  . esc_attr( $args[ 0 ] ) . '" name="' . esc_attr( $args[ 0 ] ) . '" value="1"' . ( ( $options ) ? 'checked' : '' ) . ' />' . esc_html_e( 'Yes', 'own-hosted-fonts' ) . '</label>';
 }
 function ohf_render_custom_textarea_field( $args ) {
     $options = get_option( $args[ 0 ] );
-    echo '<textarea  id="'  . $args[ 0 ] . '" name="'  . $args[ 0 ] . '" rows="6" cols="80" style="font-family:SFMono-Regular,Menlo,Monaco,Consolas,\'Liberation Mono\',\'Courier New\',monospace;">' . $options . '</textarea>';
+    echo '<textarea  id="'  . esc_attr( $args[ 0 ] ) . '" name="'  . esc_attr( $args[ 0 ] ) . '" rows="6" cols="80" style="font-family:SFMono-Regular,Menlo,Monaco,Consolas,\'Liberation Mono\',\'Courier New\',monospace;">' . esc_textarea( $options ) . '</textarea>';
 }
 function ohf_render_multi_checkboxes_input( $args ) {
     $option_val = get_option( $args[ 'id' ] );
     ?>
         <div data-ohf-ui="input-wrapper">
             <?php
-                echo '<input data-ohf-ui="input" type="hidden" name="' . $args[ 'id' ] . '" value="' . $option_val . '" />';
+                echo '<input data-ohf-ui="input" type="hidden" name="' . esc_attr( $args[ 'id' ] ) . '" value="' . esc_attr( $option_va ) . '" />';
 
                 // get active font variants from value string
                 $checked_values = explode( '|', $option_val );
@@ -200,7 +200,7 @@ function ohf_render_multi_checkboxes_input( $args ) {
                     echo '<ul>';
                     foreach ( $font_variants as $font_variant ) {
                         if ( isset( $font_variant->name ) && isset( $font_variant->file_slug ) ) {
-                            echo '<li><label><input data-ohf-ui="checkbox" type="checkbox" name="' . $font_variant->file_slug . '" value="' . $font_variant->file_slug . '"' . ( ( in_array( $font_variant->file_slug, $checked_values ) ) ? 'checked' : '' ) . ' />' . $font_variant->name . '</label></li>';
+                            echo '<li><label><input data-ohf-ui="checkbox" type="checkbox" name="' . esc_attr( $font_variant->file_slug ) . '" value="' . esc_attr( $font_variant->file_slug ) . '"' . ( ( in_array( $font_variant->file_slug, $checked_values ) ) ? 'checked' : '' ) . ' />' . esc_html( $font_variant->name ) . '</label></li>';
                         }
                     }
                     echo '</ul>';
@@ -222,7 +222,7 @@ function ohf_add_plugin_settings_link( $links ) {
     array_unshift( $links, $settings_link ); 
     return $links; 
 }
-add_filter( 'plugin_action_links_' . OHF_BASENAME, 'ohf_add_plugin_settings_link', 10, 2 );
+add_filter( 'plugin_action_links_' . OWHOF_BASENAME, 'ohf_add_plugin_settings_link', 10, 2 );
 
 
 

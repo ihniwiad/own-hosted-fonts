@@ -54,7 +54,7 @@ function ohf_update_files_after_options_save( $old_value, $new_value, $args ) {
 
     // open & write file
     
-    // $file_path = OHF_FILE_PATH . $data_json->main_folder . '/' . 'debug.txt';
+    // $file_path = OWHOF_FILE_PATH . $data_json->main_folder . '/' . 'debug.txt';
     // $file = fopen( $file_path, "w" ) or die( "Unable to open file!" );
     // fwrite( $file, 'font name: ' . $font->name . "\n" . 'old: ' . $old_value . "\n" . 'new: ' . $new_value . "\n" . 'saved: ' . date( "Y-m-d H:i:s" ) );
     // fclose( $file );
@@ -80,7 +80,7 @@ function ohf_update_files_after_options_save( $old_value, $new_value, $args ) {
                 $url_items = [];
 
                 foreach ( $font->file_types as $index => $file_type ) {
-                    $url = ROOT_RELATED_PLUGIN_URL . $data_json->main_folder . '/' . $font->folder . '/' . $font->file_trunc . $file_slug . '.' . $file_type;
+                    $url = OWHOF_ROOT_RELATED_PLUGIN_URL . $data_json->main_folder . '/' . $font->folder . '/' . $font->file_trunc . $file_slug . '.' . $file_type;
 
                     // $test_content .= "\n     " . $url;
                     $text = $templ->url_list_item;
@@ -90,7 +90,7 @@ function ohf_update_files_after_options_save( $old_value, $new_value, $args ) {
                     // use 1st item, make style preload text
                     if ( $index == 0 && isset( $templ->font_preload ) ) {
                         $font_preload_item = $templ->font_preload;
-                        $font_preload_item = str_replace( $repl_patt->url, OHF_HOME_URL . $url, $font_preload_item );
+                        $font_preload_item = str_replace( $repl_patt->url, OWHOF_HOME_URL . $url, $font_preload_item );
                         $font_preload_item = str_replace( $repl_patt->format, $file_type, $font_preload_item );
                         $fonts_preload_text .= $font_preload_item . "\n";
                     }
@@ -130,8 +130,8 @@ function ohf_update_files_after_options_save( $old_value, $new_value, $args ) {
         }
 
         // prepare paths
-        $font_folder_path = OHF_FILE_PATH . $data_json->main_folder . '/' . $font->folder;
-        $font_folder_url = OHF_PLUGIN_URL . $data_json->main_folder . '/' . $font->folder;
+        $font_folder_path = OWHOF_FILE_PATH . $data_json->main_folder . '/' . $font->folder;
+        $font_folder_url = OWHOF_PLUGIN_URL . $data_json->main_folder . '/' . $font->folder;
         $css_path = $data_json->main_folder . '/' . $font->folder . '/' . $data_json->css_file;
 
         // write css file befor trying to get file time version param
